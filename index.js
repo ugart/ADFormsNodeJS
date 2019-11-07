@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const User = require('./user')
 
 mongoose
-.connect('mongodb+srv://arthuruchoa:tuca326112@cluster0-g7rcr.mongodb.net/test?retryWrites=true&w=majority')
+.connect(process.env.mongoDBUri)
 // .connect('mongodb://localhost')//quando precisar testar localmente
 .then(() => console.log('Conectado ao Mongodb...'))
 .catch( error => console.error('Não foi possível se comunicar ao Mongodb...'))
