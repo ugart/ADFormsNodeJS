@@ -3,6 +3,8 @@ const app = express()
 const mongoose = require('mongoose')
 const User = require('./user')
 
+console.log(process.env.mongoDBUri)
+
 mongoose
 .connect(process.env.mongoDBUri)
 // .connect('mongodb://localhost')//quando precisar testar localmente
