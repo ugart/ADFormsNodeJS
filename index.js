@@ -28,7 +28,7 @@ app.post("/api/usuarios", async (req, res) => {
   }
 
   if (userResult.message) {
-    return res.status(400).send({
+    return res.status(200).send({
       message: userResult.message
     })
   } else {
