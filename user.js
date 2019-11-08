@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
     validate: {
       validator: function() {
         const nome = this.nome.split(" ")
-        return nome.length >= 3
+        return nome.length >= 2
       },
       message: "O nome deve ser completo"
     }
