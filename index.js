@@ -22,13 +22,13 @@ app.post("/api/usuarios", async (req, res) => {
 
   if (userResult.errors) {
       const atributoComErro = Object.keys(userResult.errors)[0]
-      return res.status(400).send({ 
+      return res.status(200).send({ 
         message: userResult.errors[atributoComErro].message 
       })
   }
 
   if (userResult.message) {
-    return res.status(200).send({
+    return res.status(400).send({
       message: userResult.message
     })
   } else {
