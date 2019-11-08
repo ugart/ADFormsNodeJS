@@ -8,7 +8,14 @@ const userSchema = new mongoose.Schema({
 
   nome: {
     type: String,
-    required: [true, "O campo nome é obrigatório"]
+    required: [true, "O campo nome é obrigatório"],
+    validate: {
+      validator: function() {
+        const nome = this.nome.split(" ")
+        return nome.lenght() < 2
+      },
+      message: "O nome deve ser completo"
+    }
   },
 
   idade: {
